@@ -11,7 +11,7 @@ mysql_user=me
 mysql_pass=huaban1993
 
 #开始
-start_time=$(date +%Y%m%d%H%M)
+start_time=$(date +%Y-%m-%d_%H%M)
 echo -e $start_time " : 备份开始\n" >> $bak_dir/bak.log
 
 mkdir -p $bak_dir/$start_time/
@@ -26,4 +26,4 @@ mysqldump -u$mysql_user -p$mysql_pass $mysql_db > $bak_dir/$start_time/$mysql_db
 
 
 #结束
-echo -e $(date +%Y%m%d%H%M) " : 备份结束\n\n" >> $bak_dir/bak.log
+echo -e $(date +%Y-%m-%d_%H%M) " : 备份结束\n\n" >> $bak_dir/bak.log
